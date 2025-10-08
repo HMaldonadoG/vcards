@@ -43,8 +43,7 @@ body {
 
 .form-container iframe {
     width: 100%;
-    max-width: 640px; /* Ancho original del iframe */
-    height: 1450px; /* Altura aumentada para eliminar scroll */
+    height: 1450px;
     border: none;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
