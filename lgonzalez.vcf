@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Gonzalez Padilla;Luis Gerardo;;Ing.
+FN:Ing. Luis Gerardo Gonzalez Padilla
+ORG:Cartones Microcorrugados, S.A. de C.V.
+TITLE:Director General
+TEL;TYPE=WORK,VOICE:+524777635070
+TEL;TYPE=CELL,VOICE:+524771144603
+EMAIL:lgonzalez@cartomicro.com.mx
+URL:http://www.cartomicro.com.mx
+ADR;TYPE=WORK:;;Encuartadores #304 Cd. Industrial (Abastos) C.P. 37490;Leon;Gto.;;Mexico
+END:VCARD
