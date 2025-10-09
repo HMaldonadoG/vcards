@@ -50,40 +50,42 @@
         </p>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const users = {
-                jsosa: {
-                    name: "Ing. Jesús Manuel Sosa Vázquez",
-                    vcf: "./jsosa.vcf"
-                },
-                jrodriguez: {
-                    name: "Lic. Javier Rodríguez Bravo",
-                    vcf: "./jrodriguez.vcf"
-                },
-                lgonzalez: {
-                    name: "Ing. Luis Gerardo González Padilla",
-                    vcf: "./lgonzalez.vcf"
-                }
-            };
-
-            const params = new URLSearchParams(window.location.search);
-            const userKey = params.get('user');
-
-            const contactNameElement = document.getElementById('contact-name');
-            const downloadLinkElement = document.getElementById('download-link');
-
-            if (userKey && users[userKey]) {
-                const userData = users[userKey];
-                document.title = `Contacto - ${userData.name}`;
-                contactNameElement.textContent = userData.name;
-                downloadLinkElement.href = userData.vcf;
-                downloadLinkElement.style.display = 'inline-block';
-            } else {
-                document.title = "Contacto no encontrado";
-                contactNameElement.textContent = "Por favor, escanee un código QR válido.";
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const users = {
+            jsosa: {
+                name: "Ing. Jesús Manuel Sosa Vázquez",
+                vcf: "./jsosa.vcf"
+            },
+            jrodriguez: {
+                name: "Lic. Javier Rodríguez Bravo",
+                vcf: "./jrodriguez.vcf"
+            },
+            lgonzalez: {
+                name: "Ing. Luis Gerardo González Padilla",
+                vcf: "./lgonzalez.vcf"
+            },
+            lvillanueva: {
+                name: "Ing. Luis Felipe Villanueva González",
+                vcf: "./lvillanueva.vcf"
             }
-        });
-    </script>
-</body>
-</html>
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const userKey = params.get('user');
+
+        const contactNameElement = document.getElementById('contact-name');
+        const downloadLinkElement = document.getElementById('download-link');
+
+        if (userKey && users[userKey]) {
+            const userData = users[userKey];
+            document.title = `Contacto - ${userData.name}`;
+            contactNameElement.textContent = userData.name;
+            downloadLinkElement.href = userData.vcf;
+            downloadLinkElement.style.display = 'inline-block';
+        } else {
+            document.title = "Contacto no encontrado";
+            contactNameElement.textContent = "Por favor, escanee un código QR válido.";
+        }
+    });
+</script>
