@@ -1,92 +1,127 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
-    <link rel="stylesheet" href="./style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        .logo {
-            display: block;
-            margin: 0 auto;
-            width: 35%;
-        }
-        .backup-link {
-            text-align: center;
-            font-size: 0.95rem;
-            margin-top: 15px;
-        }
-        .backup-link a {
-            color: #102598;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .backup-link a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      margin: 0;
+      background-color: #ffffff;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .logo {
+      display: block;
+      margin: 0 auto;
+      width: 35%;
+    }
+    h2 {
+      color: #102598;
+      margin-top: 20px;
+      font-weight: 700;
+    }
+    .download-button {
+      display: inline-block;
+      background-color: #102598;
+      color: #fff;
+      padding: 10px 18px;
+      margin-top: 15px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .download-button:hover {
+      background-color: #0d1e80;
+    }
+    .backup-link {
+      text-align: center;
+      font-size: 0.95rem;
+      margin-top: 15px;
+    }
+    .backup-link a {
+      color: #102598;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .backup-link a:hover {
+      text-decoration: underline;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 1251px;
+    }
+  </style>
 </head>
+
 <body>
-    <div class="container">
-        <img src="./CartoMicro.png" alt="Logo de la Empresa" class="logo">
+  <div class="container">
+    <img src="./CartoMicro.png" alt="Logo de la Empresa" class="logo">
 
-        <h2 id="contact-name"></h2>
+    <h2 id="contact-name"></h2>
 
-        <a href="#" id="download-link" class="download-button" style="display: none;">Descargar Contacto (vCard)</a>
+    <a href="#" id="download-link" class="download-button" style="display: none;">Descargar Contacto (vCard)</a>
 
-        <div class="form-container">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScIaM7bWHOOK9Lj5NY0d8L-opXk8T8exEYmf6SuKRmrefAeSA/viewform?embedded=true" width="100%" height="1251" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
-        </div>
-
-        <p class="backup-link">
-            📋 Si no ves el formulario, 
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScIaM7bWHOOK9Lj5NY0d8L-opXk8T8exEYmf6SuKRmrefAeSA/viewform" target="_blank">
-                haz clic aquí para abrirlo directamente
-            </a>.
-        </p>
+    <div class="form-container">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScIaM7bWHOOK9Lj5NY0d8L-opXk8T8exEYmf6SuKRmrefAeSA/viewform?embedded=true">Cargando…</iframe>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const users = {
-                jsosa: {
-                    name: "Ing. Jesús Manuel Sosa Vázquez",
-                    vcf: "./jsosa.vcf"
-                },
-                jrodriguez: {
-                    name: "Lic. Javier Rodríguez Bravo",
-                    vcf: "./jrodriguez.vcf"
-                },
-                lgonzalez: {
-                    name: "Ing. Luis Gerardo González Padilla",
-                    vcf: "./lgonzalez.vcf"
-                },
-                lvillanueva: {
-                    name: "Ing. Luis Felipe Villanueva González",
-                    vcf: "./lvillanueva.vcf"
-                }
-            };
+    <p class="backup-link">
+      📋 Si no ves el formulario,
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScIaM7bWHOOK9Lj5NY0d8L-opXk8T8exEYmf6SuKRmrefAeSA/viewform" target="_blank">
+        haz clic aquí para abrirlo directamente
+      </a>.
+    </p>
+  </div>
 
-            const params = new URLSearchParams(window.location.search);
-            const userKey = params.get('user');
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const users = {
+        jsosa: {
+          name: "Ing. Jesús Manuel Sosa Vázquez",
+          vcf: "./jsosa.vcf"
+        },
+        jrodriguez: {
+          name: "Lic. Javier Rodríguez Bravo",
+          vcf: "./jrodriguez.vcf"
+        },
+        lgonzalez: {
+          name: "Ing. Luis Gerardo González Padilla",
+          vcf: "./lgonzalez.vcf"
+        },
+        lvillanueva: {
+          name: "Ing. Luis Felipe Villanueva González",
+          vcf: "./lvillanueva.vcf"
+        }
+      };
 
-            const contactNameElement = document.getElementById('contact-name');
-            const downloadLinkElement = document.getElementById('download-link');
+      const params = new URLSearchParams(window.location.search);
+      const userKey = params.get('user');
 
-            if (userKey && users[userKey]) {
-                const userData = users[userKey];
-                document.title = `Contacto - ${userData.name}`;
-                contactNameElement.textContent = userData.name;
-                downloadLinkElement.href = userData.vcf;
-                downloadLinkElement.style.display = 'inline-block';
-            } else {
-                document.title = "Contacto no encontrado";
-                contactNameElement.textContent = "Por favor, escanee un código QR válido.";
-            }
-        });
-    </script>
+      const contactNameElement = document.getElementById('contact-name');
+      const downloadLinkElement = document.getElementById('download-link');
+
+      if (userKey && users[userKey]) {
+        const userData = users[userKey];
+        document.title = `Contacto - ${userData.name}`;
+        contactNameElement.textContent = userData.name;
+        downloadLinkElement.href = userData.vcf;
+        downloadLinkElement.style.display = 'inline-block';
+      } else {
+        document.title = "Contacto no encontrado";
+        contactNameElement.textContent = "Por favor, escanee un código QR válido.";
+      }
+    });
+  </script>
 </body>
 </html>
