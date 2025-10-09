@@ -41,7 +41,6 @@
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScIaM7bWHOOK9Lj5NY0d8L-opXk8T8exEYmf6SuKRmrefAeSA/viewform?embedded=true" width="100%" height="1251" frameborder="0" marginheight="0" marginwidth="0">Cargando…</iframe>
         </div>
 
-        <!-- 🔹 Enlace de respaldo para iPhone o fallos de carga -->
         <p class="backup-link">
             📋 Si no ves el formulario, 
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScIaM7bWHOOK9Lj5NY0d8L-opXk8T8exEYmf6SuKRmrefAeSA/viewform" target="_blank">
@@ -50,42 +49,44 @@
         </p>
     </div>
 
-   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const users = {
-            jsosa: {
-                name: "Ing. Jesús Manuel Sosa Vázquez",
-                vcf: "./jsosa.vcf"
-            },
-            jrodriguez: {
-                name: "Lic. Javier Rodríguez Bravo",
-                vcf: "./jrodriguez.vcf"
-            },
-            lgonzalez: {
-                name: "Ing. Luis Gerardo González Padilla",
-                vcf: "./lgonzalez.vcf"
-            },
-            lvillanueva: {
-                name: "Ing. Luis Felipe Villanueva González",
-                vcf: "./lvillanueva.vcf"
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const users = {
+                jsosa: {
+                    name: "Ing. Jesús Manuel Sosa Vázquez",
+                    vcf: "./jsosa.vcf"
+                },
+                jrodriguez: {
+                    name: "Lic. Javier Rodríguez Bravo",
+                    vcf: "./jrodriguez.vcf"
+                },
+                lgonzalez: {
+                    name: "Ing. Luis Gerardo González Padilla",
+                    vcf: "./lgonzalez.vcf"
+                },
+                lvillanueva: {
+                    name: "Ing. Luis Felipe Villanueva González",
+                    vcf: "./lvillanueva.vcf"
+                }
+            };
+
+            const params = new URLSearchParams(window.location.search);
+            const userKey = params.get('user');
+
+            const contactNameElement = document.getElementById('contact-name');
+            const downloadLinkElement = document.getElementById('download-link');
+
+            if (userKey && users[userKey]) {
+                const userData = users[userKey];
+                document.title = `Contacto - ${userData.name}`;
+                contactNameElement.textContent = userData.name;
+                downloadLinkElement.href = userData.vcf;
+                downloadLinkElement.style.display = 'inline-block';
+            } else {
+                document.title = "Contacto no encontrado";
+                contactNameElement.textContent = "Por favor, escanee un código QR válido.";
             }
-        };
-
-        const params = new URLSearchParams(window.location.search);
-        const userKey = params.get('user');
-
-        const contactNameElement = document.getElementById('contact-name');
-        const downloadLinkElement = document.getElementById('download-link');
-
-        if (userKey && users[userKey]) {
-            const userData = users[userKey];
-            document.title = `Contacto - ${userData.name}`;
-            contactNameElement.textContent = userData.name;
-            downloadLinkElement.href = userData.vcf;
-            downloadLinkElement.style.display = 'inline-block';
-        } else {
-            document.title = "Contacto no encontrado";
-            contactNameElement.textContent = "Por favor, escanee un código QR válido.";
-        }
-    });
-</script>
+        });
+    </script>
+</body>
+</html>
